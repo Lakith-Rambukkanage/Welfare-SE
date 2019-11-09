@@ -78,8 +78,8 @@
 									</div>
 
 									<div class="2u 12u$(3)">
-										<input type="checkbox" id="disable" name="desable">
-										<label for="diable">Desable</label>
+										<input type="checkbox" id="disable" name="disable">
+										<label for="disable">Disable</label>
 									</div>
 
 									<div class="2u 12u$(3)">
@@ -106,7 +106,7 @@
 				</div>
 			</section>
 
-<!--Alert-->
+<!--alert-->
 
 <?php if (isset($_SESSION["alert"])): ?>
 	<script type="text/javascript">
