@@ -9,14 +9,9 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-<<<<<<< HEAD
         <script src="js/init.js"></script>
         <script src="https://kit.fontawesome.com/yourcode.js"></script>
 		<noscript>
-=======
-		<script src="js/init.js"></script>
-
->>>>>>> 442d207aa37a00f6f2869b7935634a15b440c005
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/style-xlarge.css" />
@@ -38,17 +33,6 @@
             //$a=10;
             // if(true){
             // output data of each row
-<<<<<<< HEAD
-                ?><div class="name" style="font-family: century gothic"><i class="fa fa-user-circle-o"></i>&nbsp </div><?php
-                while($row = mysqli_fetch_assoc($result_set)) {
-                    ?><div class="text1" style="font-family: century gothic">
-                    <?php    echo "<span class='usernameClass'>"  .'</span>'."<br>"
-                        ?><i class="   fa fa-star"> &nbsp</i><?php  echo $row["name"]."<br>"."<br>"?><?php
-                        ?><div class="text2" style="font-family:Century Gothic;"><i class="fas fa-money-bill-wave"> &nbsp<?php  echo $row["req_amount"]?></i></div>
-                        <div style="font-size: 15px; display:inline;"><i class="far fa-check-circle" ></i><?php echo $row["type"]  ?></div><?php
-                    ?></div><?php
-                    ?><div class="hr"><hr></div><?php
-=======
         ?>
         <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
         <?php
@@ -94,7 +78,6 @@
                </header>
                <?php }
        
->>>>>>> 442d207aa37a00f6f2869b7935634a15b440c005
 
        ?>
                 
