@@ -35,7 +35,9 @@
         ?>
         <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
         <?php
+            if (mysqli_num_rows($result_set) > 0) {
             while($row = mysqli_fetch_assoc($result_set)) {
+ 
         ?>
                 <div class="container">
                     <form method="POST" enctype="multipart/form-data"> 
@@ -51,20 +53,28 @@
                 </div>
                 <br>
 
-        <?php } 
-        if ($row == false){?>
+        <?php } }else{?>
+               
        
-        <header>
-        <div class=container>
-        <h3><?php echo 'Oops! We could not find any donors';?></h3></div>
-        </header>
-        <?php }
+                <header>
+                <div class=container>
+                <h3><?php echo 'Oops! We could not find any donors';?></h3></div>
+                </header>
+                <?php }
+        
+
         ?>
                 
         <style>
+            body  {
+            /* background-image: url("images/yellow.jpg"); */
+            /* background-size: auto; */
+            /* background-attachment: scroll; */
+            background-color: #F6FE0D;
+            }
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
             .container {
-            text-align:justify;
+            text-align:center;
             border-radius: 5px;
             background-color: #f2f2f29c;
             padding: 50px;
@@ -81,6 +91,8 @@
             }
             
         </style>
-
+			<?php 
+			// require ('includes/footer.html');
+			?>
     </body>
 </html>
