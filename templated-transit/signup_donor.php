@@ -28,9 +28,14 @@
 
 		<!-- Header -->
 		<?php 
-			require ('includes/header.html');
+			require ('includes/header_signup.html');
 			?>
-
+		<!-- Banner -->
+		<div style="height: 100px">
+			<section id="banner" >
+				
+			</section>
+		</div>
 		<!-- Three -->
 			<section id="three" class="wrapper style3 special" >
 				<div class="container">
