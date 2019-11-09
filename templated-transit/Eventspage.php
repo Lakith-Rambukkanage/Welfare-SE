@@ -57,7 +57,7 @@
                         <?php echo $row['description']; ?><br>
                         <?php $progress= ($rec_amount/$req_amount)*100?>
                         <label for="percentage_completion"><b>Progress :</b></label>
-                        <progress id="progressBar" max="100" value="<?php echo $progress; ?>"></progress>
+                        <progress id="progressBar" max="100" value="<?php echo round($progress,1); ?>"></progress>
                         </div>
 
                     

@@ -62,7 +62,7 @@
 						</div>
 						<div class="4u$ 12u$(medium)">
 							<section class="box">
-								<a href="#">
+								<a href="ViewDonors.php">
 								<i class="icon big rounded color6 fa-child"></i>
 								<h3>View Donors</h3>
 								</a>
