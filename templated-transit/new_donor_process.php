@@ -12,7 +12,7 @@ include_once('includes/connection.php');?>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Welfare Organization - Generic</title>
+		<title>Welfare Organization - Donor Sign Up</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -70,15 +70,73 @@ include_once('includes/connection.php');?>
 					$current_user = new User($user_name, $email);
 					$_SESSION['current_user'] = $current_user;
 					$_SESSION['password'] = $password;
-					echo "hi";
 
-					//SQL INPUT
+
+					//SQL INPUT to users
 
 					$query = "INSERT INTO users (username, email, password) VALUES('{$user_name}', '{$email}', '{$password}')";
 					mysqli_query($connection, $query);
 					if (isset($_SESSION['current_user'])){
 						$_SESSION['logged_in'] = True;
 					}
+
+
+					//  SQL to donor pref
+
+
+
+
+					$list = array();
+					if (isset($_POST['children'])){
+					array_push($list, 'children'); // Displays value of checked checkbox.
+					$type='children';
+					$preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$user_name}','{$type}')";
+					mysqli_query($connection, $preQ);
+					}
+
+					if (isset($_POST['animals'])){
+					array_push($list, 'animals'); // Displays value of checked checkbox.
+					$type='animals';
+					 $preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$user_name}','{$type}')";
+					 mysqli_query($connection, $preQ);
+					}
+
+					if (isset($_POST['health'])){
+					array_push($list, 'health'); // Displays value of checked checkbox.
+					$type='health';
+					 $preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$user_name}','{$type}')";
+					 mysqli_query($connection, $preQ);
+					}
+
+					if (isset($_POST['disable'])){
+					array_push($list, 'disable'); // Displays value of checked checkbox.
+					 $type='disable';
+					 $preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$user_name}','{$type}')";
+					 mysqli_query($connection, $preQ);
+					}
+
+					if (isset($_POST['environment'])){
+					array_push($list, 'environment'); // Displays value of checked checkbox.
+					$type='environment';
+					 $preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$user_name}','{$type}')";
+					mysqli_query($connection, $preQ);
+				    }
+
+					if (isset($_POST['poverty'])){
+					array_push($list,'poverty'); // Displays value of checked checkbox.
+					$type='poverty';
+					 $preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$user_name}','{$type}')";
+					 mysqli_query($connection, $preQ);
+					}
+					
+					//print_r($list );	
+
+					 //$preQ = "INSERT INTO `donor_pref`(`username`, `event_type`) VALUES ('{$username}','{$type}')"
+
+
+
+
+
 					/*$querydonor = "SELECT username FROM user where email = '{$email}'";
 					$resultdonor = mysqli_query($connection, $queryclient);
 					if(mysqli_num_rows($resultdonor)==1){
@@ -86,8 +144,19 @@ include_once('includes/connection.php');?>
 						$client_id = $recordclient['client_id'];
 						$current_user->set_id($client_id);
 					}*/
-					echo "<script> window.history.go(-3); </script>";
+					//echo "<script> window.history.go(-3); </script>";
 					//header("Location:homepage.php");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
