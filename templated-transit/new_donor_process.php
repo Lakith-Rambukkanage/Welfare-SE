@@ -49,8 +49,8 @@ include_once('includes/connection.php');?>
 		$querydonor = "SELECT username FROM users where username = '{$user_name}'";
 		$resultdonor = mysqli_query($connection,$querydonor);
 
-		$queryclient = "SELECT email FROM client WHERE email = '{$email}'";
-		$resultclient = mysqli_query($connection, $queryclient);
+		// $queryclient = "SELECT email FROM client WHERE email = '{$email}'";
+		// $resultclient = mysqli_query($connection, $queryclient);
 
 
 
@@ -73,8 +73,8 @@ include_once('includes/connection.php');?>
 
 
 					//SQL INPUT to users
-
-					$query = "INSERT INTO users (username, email, password) VALUES('{$user_name}', '{$email}', '{$password}')";
+					$user_type='donor';
+					$query = "INSERT INTO users (username, email, password,type) VALUES('{$user_name}', '{$email}', '{$password}','{$user_type}')";
 					mysqli_query($connection, $query);
 					if (isset($_SESSION['current_user'])){
 						$_SESSION['logged_in'] = True;
