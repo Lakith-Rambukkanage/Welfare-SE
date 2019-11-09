@@ -72,12 +72,30 @@
 						</div>
 					</div>
 				</div>
-				<div align="center">
-							<ul class="actions">
-								<li>
-								<a href="#" class="button big">More</a>
-								</li>
-							</ul>
+				<div class="container">
+					<div class="row 150%">
+						<div class="4u 12u$(medium)">
+							<section class="box">
+								<i class="icon big rounded color7 fa-wheelchair"></i>
+								<h3>Disables</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+							</section>
+						</div>
+						<div class="4u 12u$(medium)">
+							<section class="box">
+								<i class="icon big rounded color10 fa-tree"></i>
+								<h3>Environment</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
+							</section>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<section class="box">
+								<i class="icon big rounded color2 fa-money"></i>
+								<h3>Poverty</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+							</section>
+						</div>
+					</div>
 				</div>
 			</section>
 			
