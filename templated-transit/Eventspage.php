@@ -9,17 +9,22 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
+<<<<<<< HEAD
         <script src="js/init.js"></script>
         <script src="https://kit.fontawesome.com/yourcode.js"></script>
 		<noscript>
+=======
+		<script src="js/init.js"></script>
+
+>>>>>>> 442d207aa37a00f6f2869b7935634a15b440c005
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
+            <link rel="stylesheet" href="css/style-xlarge.css" />
+
 	</head>
     <body>
         <?php 
-		    require('includes/header.html');
+		    require('includes/header_recipient.php');
         ?>
         <?php
             require_once('includes/Database.php');
@@ -31,8 +36,9 @@
             //echo $row2['name'];
             //echo $result["name"];
             //$a=10;
-            if(true){
+            // if(true){
             // output data of each row
+<<<<<<< HEAD
                 ?><div class="name" style="font-family: century gothic"><i class="fa fa-user-circle-o"></i>&nbsp </div><?php
                 while($row = mysqli_fetch_assoc($result_set)) {
                     ?><div class="text1" style="font-family: century gothic">
@@ -42,20 +48,127 @@
                         <div style="font-size: 15px; display:inline;"><i class="far fa-check-circle" ></i><?php echo $row["type"]  ?></div><?php
                     ?></div><?php
                     ?><div class="hr"><hr></div><?php
+=======
+        ?>
+        <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
+        <?php
+            if (mysqli_num_rows($result_set) > 0) {
+            while($row = mysqli_fetch_assoc($result_set)) {
 
+        ?>
+                <div class="container">
+                    <form method="POST" enctype="multipart/form-data"> 
+                        <!-- <div class="row"> -->
+                        <div class="col-sm-4" style="background-color:rgba(255, 255, 255, .8);">
+                        <h4><?php echo $row['event_name'];?></h4><br>
+                        
+                        <label for="org_name"><b>Organisation:</b></label>
+                        <?php echo $row['org_name']; ?><br>
+                        <label for="event_type"><b>Type of event:</b></label>
+                        <?php echo $row['event_type']; ?><br>
+                        <label for="req_amount"><b>Amount required:</b></label>
+                        <?php $req_amount=$row['req_amount'];
+                         echo $req_amount; ?><br>
+                        <label for="rec_amount"><b>Amount received:</b></label>
+                        <?php $rec_amount=$row['rec_amount'];
+                         echo $rec_amount; ?><br>
+                        <label for="details"><b>Description :</b></label>
+                        <?php echo $row['description']; ?><br>
+                        <?php $progress= ($rec_amount/$req_amount)*100?>
+                        <label for="percentage_completion"><b>Progress :</b></label>
+                        <progress id="progressBar" max="100" value="<?php echo round($progress,1); ?>"></progress>
+                        </div>
+
+                    
+                    </form> 
+                    
+                </div>
+                <br>
+
+                <?php } }else{?>
+               
+       
+               <header>
+               <div class=container>
+               <h3><?php echo 'You have not added any events yet';?></h3></div>
+               </header>
+               <?php }
+       
+>>>>>>> 442d207aa37a00f6f2869b7935634a15b440c005
+
+       ?>
                 
-                }
-            } else {
-                    echo "No Events Yet!";
+    
+
+        <!-- <button class="button" onclick="Open()">Add Event</button> -->
+        <style>
+            body  {
+            /* background-image: url("images/yellow.jpg"); */
+            /* background-size: auto; */
+            /* background-attachment: scroll; */
+            background-color: #F6FE0D;
             }
+            *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
+            .container {
+            text-align:justify;
+            border-radius: 5px;
+            background-color: #f2f2f29c;
+            padding: 50px;
+            width: 50%
+            }
+            .col-sm-4 {
+                text-align:Center;
+                border-radius: 5px;
+                background-color: #f2f2f29c;
+                padding: 50px;
+                width: 50%;
+                margin: auto
                 
-        ?>
+            }
+            progress {
+                display:inline-block;
+                width:190px;
+                height:20px;
+                padding:15px 0 0 0;
+                margin:0;
+                background:none;
+                border: 0;
+                border-radius: 15px;
+                text-align: left;
+                position:relative;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 0.8em;
+            }
+            progress::-webkit-progress-bar {
+                height:11px;
+                width:150px;
+                margin:0 auto;
+                background-color: #CCC;
+                border-radius: 15px;
+                box-shadow:0px 0px 6px #777 inset;
+            }
+            progress::-webkit-progress-value {
+                display:inline-block;
+                float:left;
+                height:11px;
+                margin:0px -10px 0 0;
+                background: #F70;
+                border-radius: 15px;
+                box-shadow:0px 0px 6px #777 inset;
+            }
+            progress:after {
+                margin:-26px 0 0 -7px;
+                padding:0;
+                display:inline-block;
+                float:left;
+                content: attr(value) '%';
+            }
 
-        <button onclick="Open()">Add Event</button>
-
-        <?php 
-			require ('includes/footer.html');
-        ?>
+            
+        </style>
+			<?php 
+			// require ('includes/footer.html');
+			?>
     </body>
 <style>
 .text1{
