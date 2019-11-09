@@ -3,7 +3,7 @@ session_start();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "myweb";
+$dbname = "welfare_se";
 
 // Create connection
 $to=$_GET['To'];
