@@ -46,27 +46,27 @@
 					<div class="row 150%">
 						<div class="4u 12u$(medium)">
 							<section class="box">
-								<a href="#"><i class="icon big rounded color1 fa-user"></i>
+								<a href="Eventspage.php"><i class="icon big rounded color1 fa-user"></i>
 								<h3>My Events</h3></a>
-								<p>View the Progress of Your events</p>
+								<p>View the progress of your events</p>
 							</section>
 						</div>
 						<div class="4u 12u$(medium)">
 							<section class="box">
-								<a href="#">
+								<a href="AddEvent.php">
 								<i class="icon big rounded color9 fa-plus"></i>
 								<h3>Add Event</h3>
 								</a>
-								<p>Create new Event</p>
+								<p>Create new event and raise funds</p>
 							</section>
 						</div>
 						<div class="4u$ 12u$(medium)">
 							<section class="box">
-								<a href="#">
+								<a href="ViewDonors.php">
 								<i class="icon big rounded color6 fa-child"></i>
 								<h3>View Donors</h3>
 								</a>
-								<p>View list of Donors and contacts</p>
+								<p>View a list of donors who may help</p>
 							</section>
 						</div>
 					</div>

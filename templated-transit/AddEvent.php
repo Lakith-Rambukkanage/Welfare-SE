@@ -21,7 +21,7 @@
 	</head>
     <body>
         <?php 
-            require('includes/header.html');
+            require('includes/header_recipient.php');
         ?>
         <div class="container">
         <form action="AddEventAction.php" method="POST" enctype="multipart/form-data">
@@ -63,6 +63,7 @@
             padding: 20px;
             width: 50%
             }
+            
         </style>
     </body>
 </html>
