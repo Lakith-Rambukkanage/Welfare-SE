@@ -39,10 +39,9 @@ include_once('includes/connection.php');?>
 	if (isset($_POST['submit']) and $_SESSION['logged_in']==false) {		
 		$user_name = $_POST['user_name'];
 		$email = $_POST['email'];
-		$description = $_POST['description'];
 		$password = sha1($_POST['password']);
 		$admincode = sha1($_POST['admincode']);
-		$type = 'donor';
+		$type = 'admin';
 		//$repassword = sha1($_POST['repassword']);
 		$input1 = $_POST["password"];
 		$input2 = $_POST["repassword"];
@@ -59,8 +58,10 @@ include_once('includes/connection.php');?>
 
 ///made any change
 
-
-		if(mysqli_num_rows($resultdonor)==0){
+		if ($admincode=='42d44d951ad31e27f50f694106bfe428c8097534') {
+			# code...
+		
+			if(mysqli_num_rows($resultdonor)==0){
 				
 				//if($recordemployee['email'] == $email){
 			if ($input1==$input2 && !preg_match('/\s/',$input1)){
@@ -120,25 +121,25 @@ include_once('includes/connection.php');?>
 					$error = "Your Password should contain atleast a symbol, a digit and a block letter. Should have 5 or more characters without whitespaces";
 					$_SESSION['alert']=$error;
 					echo "<script> window.history.back(); </script>";
-					//header("Location:newemployee.php");
-					//header("Location:newemployee.php?alert=".urlencode($error));
 				}
 			}
 			else{
 				$error ="Password confirmation doesn't match";
 				$_SESSION['alert']=$error;
 				echo "<script> window.history.back(); </script>";
-				//header("Location:newemployee.php");
-				//header("Location:newemployee.php?alert=".urlencode($error));
 			}
 		}
 		else{
 			$error ="There's an account created with this Username. Use a different Username or login with your existing account.";
 			$_SESSION['alert']=$error;
 			echo "<script> window.history.back(); </script>";
-			//header("Location:newemployee.php");
-			//header("Location:newemployee.php?alert=".urlencode($error));
+		}
 		}		
+		else{
+			$error ="Please enter the valid admin code!";
+			$_SESSION['alert']=$error;
+			echo "<script> window.history.back(); </script>";
+		}
 	}
 	else{
 		//header("Location: homepage.php");

@@ -27,7 +27,7 @@
 
 		<!-- Header -->
 		<?php 
-		require('includes/header_recipient.php');
+		require('includes/header_admin.php');
 		?>
 		
 		<!-- Banner -->
@@ -46,25 +46,25 @@
 					<div class="row 150%">
 						<div class="4u 12u$(medium)">
 							<section class="box">
-								<a href="Eventspage.php"><i class="icon big rounded color1 fa-user"></i>
-								<h3>My Events</h3></a>
+								<a href="#"><i class="icon big rounded color1 fa-money"></i>
+								<h3>Donations</h3></a>
 								<p>View the progress of your events</p>
 							</section>
 						</div>
 						<div class="4u 12u$(medium)">
 							<section class="box">
-								<a href="AddEvent.php">
-								<i class="icon big rounded color9 fa-plus"></i>
-								<h3>Add Event</h3>
+								<a href="#">
+								<i class="icon big rounded color9 fa-image"></i>
+								<h3>Events</h3>
 								</a>
 								<p>Create new event and raise funds</p>
 							</section>
 						</div>
 						<div class="4u$ 12u$(medium)">
 							<section class="box">
-								<a href="ViewDonors.php">
-								<i class="icon big rounded color6 fa-child"></i>
-								<h3>View Donors</h3>
+								<a href="#">
+								<i class="icon big rounded color6 fa-book"></i>
+								<h3>Reports</h3>
 								</a>
 								<p>View a list of donors who may help</p>
 							</section>
@@ -73,37 +73,6 @@
 				</div>
 			</section>
 			
-
-		<!-- Three -->
-			<section id="three" class="wrapper style3 special">
-				<div class="container">
-					<header class="major">
-						<h2>Help Us Improve</h2>
-						<p>Let us know how we can be better :)</p>
-					</header>
-				</div>
-				<div class="container 50%">
-					<form action="#" method="post">
-						<div class="row uniform">
-							<div class="6u 12u$(small)">
-								<input name="name" id="name" value="" placeholder="Name" type="text">
-							</div>
-							<div class="6u$ 12u$(small)">
-								<input name="email" id="email" value="" placeholder="Email" type="email">
-							</div>
-							<div class="12u$">
-								<textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="12u$">
-								<ul class="actions">
-									<li><input value="Send Message" class="special big" type="submit"></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</div>
-			</section>
-
 		<!-- Footer -->
 			<?php 
 			require ('includes/footer.html');

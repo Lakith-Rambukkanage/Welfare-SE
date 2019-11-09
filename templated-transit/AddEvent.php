@@ -21,7 +21,7 @@
 	</head>
     <body>
         <?php 
-            require('includes/header.html');
+            require('includes/header_recipient.php');
         ?>
         <div class="container">
         <form action="AddEventAction.php" method="POST" enctype="multipart/form-data">
@@ -54,16 +54,25 @@
         <?php 
 			// require ('includes/footer.html');
         ?>
+
         <style>
+            body  {
+            /* background-image: url("images/yellow.jpg"); */
+            /* background-size: auto; */
+            /* background-attachment: scroll; */
+            background-color: #F6FE0D;
+            }
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
-            .container {
-            text-align:justify;
+            .container{
+            text-align:center;
             border-radius: 5px;
             background-color: #f2f2f29c;
             padding: 20px;
             width: 50%
             }
+            
         </style>
+
     </body>
 </html>
 
