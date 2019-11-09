@@ -27,7 +27,7 @@
 
 		<!-- Header -->
 			<?php  
-		require('includes/header_recipient.php');
+		require('includes/header_admin.php');
 		?>
 
 		<!-- Main -->
