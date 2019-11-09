@@ -29,7 +29,12 @@
 		<?php 
 		require('includes/header_signup.html');
 		?>
-		
+		<!-- Banner -->
+		<div style="height: 100px">
+			<section id="banner" >
+				
+			</section>
+		</div>
 		<!-- One -->
 			<section id="one" class="wrapper style1 special">
 				<div class="container">
