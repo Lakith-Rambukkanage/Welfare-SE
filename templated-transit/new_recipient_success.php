@@ -36,7 +36,7 @@
 
 					<header class="major">
 						<h2>Recipient Sign Up Successful</h2>
-						<a href="homepage_Donor.php">
+						<a href="homepage_recipient.php">
 							<i class="icon big rounded color9 fa-check-square"></i>
 							<p>Continue to Homepage</p>
 						</a>
