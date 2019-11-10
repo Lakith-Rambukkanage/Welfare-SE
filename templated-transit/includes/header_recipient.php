@@ -7,7 +7,7 @@
 						<li><a href="AddEvent.php">+Add Event</a></li>
 						<li><a href="Eventspage.php">My Events</a></li>
 						<li><a href="ViewDonors.php">View Donors</a></li>
-						<li><a href="#" class="button special">Log Out</a></li>
+						<li><a href="logout.php" class="button special">Log Out</a></li>
 					</ul>
 				</nav>
 			</header>
