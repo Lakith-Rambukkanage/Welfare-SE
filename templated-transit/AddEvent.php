@@ -23,7 +23,8 @@
         <?php 
             require('includes/header_recipient.php');
         ?>
-        <div class="container">
+        <br><br><br><br>
+        <div class="col-sm-4" style="background-color:rgba(255, 255, 255, .8);">
         <form action="AddEventAction.php" method="POST" enctype="multipart/form-data">
             <div class="row uniform 50%">
                 
@@ -47,12 +48,12 @@
                 <div class="12u$">Description:<br><textarea placeholder="Type here" name="description" required></textarea></div><br>
                 
                 <div class="12u$">Amount required:<br><input type="text" name="req_amount" required></div><br><br>
-                <div class="12u$"><input type="submit" name="submit" id="submit" value="Submit"></div>
+                <div class="12u$"><input type="submit" name="submit" id="submit" value="Submit"></div><br><br>
             </div>
-        </form>
-        </div>
+        </form><br><br>
+        </div></div>
         <?php 
-			// require ('includes/footer.html');
+			require ('includes/footer.html');
         ?>
 
         <style>
@@ -60,15 +61,19 @@
             /* background-image: url("images/yellow.jpg"); */
             /* background-size: auto; */
             /* background-attachment: scroll; */
-            background-color: #F6FE0D;
+            background-color: #FEF964;
             }
+
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
-            .container{
-            text-align:center;
+
+            .col-sm-4 {
+            text-align:Center;
             border-radius: 5px;
             background-color: #f2f2f29c;
-            padding: 20px;
-            width: 50%
+            padding: 50px;
+            width: 50%;
+            margin: auto
+                
             }
             
         </style>

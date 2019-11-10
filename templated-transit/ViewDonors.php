@@ -57,8 +57,8 @@
                
        
                 <header>
-                <div class=container>
-                <h3><?php echo 'Oops! We could not find any donors';?></h3></div>
+                <div class="col-sm-4" style="background-color:rgba(255, 255, 255, .8);">
+                <h3><?php echo 'Oops! We could not find any donors';?></h3></div><br><br>
                 </header>
                 <?php }
         
@@ -70,16 +70,16 @@
             /* background-image: url("images/yellow.jpg"); */
             /* background-size: auto; */
             /* background-attachment: scroll; */
-            background-color: #F6FE0D;
+            background-color: #FEF964;
             }
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
-            .container {
+            /* .container {
             text-align:center;
             border-radius: 5px;
             background-color: #f2f2f29c;
             padding: 50px;
             width: 50%
-            }
+            } */
             .col-sm-4 {
                 text-align:Center;
                 border-radius: 5px;
@@ -92,7 +92,7 @@
             
         </style>
 			<?php 
-			// require ('includes/footer.html');
+			    require ('includes/footer.html');
 			?>
     </body>
 </html>

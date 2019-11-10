@@ -77,11 +77,9 @@
                <h3><?php echo 'You have not added any events yet';?></h3></div>
                </header>
                <?php }
-       
+                require ('includes/footer.html');
 
-       ?>
-                
-    
+                ?>
 
         <!-- <button class="button" onclick="Open()">Add Event</button> -->
         <style>
@@ -89,16 +87,16 @@
             /* background-image: url("images/yellow.jpg"); */
             /* background-size: auto; */
             /* background-attachment: scroll; */
-            background-color: #F6FE0D;
+            background-color: #FEF964;
             }
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
-            .container {
+            /* .container {
             text-align:justify;
             border-radius: 5px;
             background-color: #f2f2f29c;
             padding: 50px;
             width: 50%
-            }
+            } */
             .col-sm-4 {
                 text-align:Center;
                 border-radius: 5px;
@@ -149,9 +147,7 @@
 
             
         </style>
-			<?php 
-			// require ('includes/footer.html');
-			?>
+
     </body>
 <style>
 .text1{
@@ -167,9 +163,8 @@
 }
 </style>
 </html>
-<script>
+<!-- <script>
     function Open(){
         window.open("AddEvent.php");
     }
-</script>
-
+</script> -->
