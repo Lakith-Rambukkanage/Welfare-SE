@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
     <head>
     <meta charset="UTF-8">
@@ -11,29 +12,26 @@
 		<script src="js/skel-layers.min.js"></script>
         <script src="js/init.js"></script>
         <!-- <script src="https://kit.fontawesome.com/yourcode.js"></script> -->
-		<noscript>
+		
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/style-xlarge.css" />
-        </noscript>
+        
 
 	</head>
     <body>
         <?php 
+            $fakeuser=new User('yoshani','Yoshani Ranaweera','yoshani@gmail.com','Recipient');
 		    require('includes/header_recipient.php');
-        ?>
-        <?php
             require_once('includes/Database.php');
             $db = Database::getInstance();
             $con = $db->getConnection();
-            $sql = "SELECT * FROM events";
+            $sql = "SELECT event_name,org_name,req_amount,rec_amount,event_type,description FROM events WHERE username LIKE CONCAT('%', fakeuser.get_fullname(), '%')";
+           
             $result_set = mysqli_query($con, $sql);
-            //$row = mysqli_fetch_assoc($result_set);
-            //echo $row2['name'];
-            //echo $result["name"];
-            //$a=10;
-            // if(true){
-            // output data of each row
+            
+           
+
         ?>
         <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
         <?php
