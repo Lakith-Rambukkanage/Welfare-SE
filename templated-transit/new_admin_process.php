@@ -77,7 +77,7 @@ include_once('includes/connection.php');?>
 
 					//SQL INPUT to users
 					$user_type='recipient';
-					$query = "INSERT INTO users (username, email, password,type) VALUES('{$user_name}', '{$email}', '{$password}','{$user_type}')";
+					$query = "INSERT INTO users (username,actualname, email, password,type) VALUES('{$user_name}','{$actualname}', '{$email}', '{$password}','{$user_type}')";
 					mysqli_query($connection, $query);
 					if (isset($_SESSION['current_user'])){
 						$_SESSION['logged_in'] = True;
