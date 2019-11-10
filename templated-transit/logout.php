@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <!--
 	Transit by TEMPLATED
 	templated.co @templatedco
@@ -36,13 +36,11 @@ session_start();
 		?>
 		<!-- sa -->
 		<?php
-		if (isset($_POST['submit'])) {
 			$_SESSION['logged_in']=false;
 			unset($_SESSION['current_user']);
 			//session_unset();
 			//session_destroy();
 			header("Location: homepage.php");
-		}
 		?>
 		<!-- Main -->
 			<section id="main" class="wrapper">
