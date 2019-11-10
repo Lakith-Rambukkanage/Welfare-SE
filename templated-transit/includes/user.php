@@ -9,6 +9,7 @@ class User{
 	//protected $system;
 
 	public function __construct($user_name,$fullname, $email,$type/*, $sys*/){
+	public function __construct($user_name, $email, $type/*, $sys*/){
 		$this->user_name = $user_name;
 		$this->fullname = $fullname;
 		$this->email = $email;

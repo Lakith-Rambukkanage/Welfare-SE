@@ -48,67 +48,36 @@ session_start();
 					$record = mysqli_fetch_assoc($result);
 						if($record['password']==sha1($password)){					
 							$valid_pwd = true;
-							$client_id = $record['client_id'];
+							$type = $record['type'];
 							$email = $record['email'];
-							$first_name = $record['first_name'];
-							$last_name = $record['last_name'];
-							$contact_number = $record['contact_number'];
-							$current_user = new User($user_name,$email);
-							$current_user->set_id($client_id);
-							//break;
+							$current_user = new User($user_name,$email,$type);
 						}
-					//}
-				}
-				else{
-					$queryemployee = "SELECT employee_id, first_name, last_name, email, contact_number, password FROM employee where email = '{$email}'";
-					$resultemployee = mysqli_query($connection,$queryemployee);
-					//while($recordemployee = mysqli_fetch_assoc($resultemployee) && $notlogged){
-					if(mysqli_num_rows($resultemployee)==1){
-						$valid_email = true;
-						$recordemployee = mysqli_fetch_assoc($resultemployee);
-						//if($recordemployee['email'] == $email){
-						if($recordemployee['password']==sha1($password)){
-							$valid_pwd = true;
-							$employee_id = $recordemployee['employee_id'];
-							$first_name = $recordemployee['first_name'];
-							$last_name = $recordemployee['last_name'];
-							$contact_number = $recordemployee['contact_number'];
-							$email = $recordemployee['email'];
-							$current_user = new Employee($first_name, $last_name, $email, $contact_number);
-							$current_user->set_id($employee_id);
-							//break;
-						}
-					}
-					/*else{
-						$valid_email = false;
-						//header("Location:login.php?alert=".urlencode("Invalid e-mail address"));
-					}*/
-					//}
 				}
 				$_SESSION['current_user'] = $current_user;
-				if(!$valid_email){
-					$_SESSION['alert']="Invalid e-mail address";
-					//echo "<script> window.history.back(); </script>";
-					header("Location:homepage.php");
+				if(!$valid_user){
+					$_SESSION['alert']="Invalid Username";
+					echo "<script> window.history.back(); </script>";
+					//header("Location:login.php");
 					//header("Location:homepage.php?alert=".urlencode("Invalid e-mail address"));
 				}		
 				elseif(!$valid_pwd){
 					$_SESSION['alert']="Invalid password";
-					header("Location:homepage.php");
+					//header("Location:homepage.php");
+					echo "<script> window.history.back(); </script>";
 					//header("Location:homepage.php?alert=".urlencode("Invalid password"));
 				}
 				else{
 					if (isset($_SESSION['current_user'])){
 						$_SESSION['logged_in'] = True;
 					}
-					echo "<script> window.history.back(); </script>";
+					//echo "<script> window.history.back(); </script>";
 					//header("Location:homepage.php");
 				}
 			} ?>
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
-
+					<?php var_dump($_SESSION['current_user']); ?>
 				</div>
 			</section>
 
