@@ -34,12 +34,12 @@ session_start();
 			<?php 
 		require('includes/header.html');
 		?>
-		<!-- sa -->
+		<!-- sql -->
 		<?php
 			if ( (!isset($_SESSION['logged_in'])) or $_SESSION['logged_in']==false){
 				$user_name = $_POST['user_name'];
 				$password = $_POST['password'];
-				$query = "SELECT username, email, password, type FROM users where username = '{$user_name}'" ;
+				$query = "SELECT username, actualname, email, password, type FROM users where username = '{$user_name}'" ;
 				$result = mysqli_query($connection, $query);
 				$valid_user = false;
 				$valid_pwd = false;
@@ -49,8 +49,9 @@ session_start();
 						if($record['password']==sha1($password)){					
 							$valid_pwd = true;
 							$type = $record['type'];
+							$actualname = $record['actualname'];
 							$email = $record['email'];
-							$current_user = new User($user_name,$email,$type);
+							$current_user = new User($user_name,$actualname,$email,$type);
 						}
 				}
 				$_SESSION['current_user'] = $current_user;
@@ -71,13 +72,25 @@ session_start();
 						$_SESSION['logged_in'] = True;
 					}
 					//echo "<script> window.history.back(); </script>";
-					//header("Location:homepage.php");
 				}
+
+				if ($type=='admin') {
+					header("Location:homepage_admin.php");
+
+				}
+				elseif ($type=='donor') {
+					header("Location:homepage_donor.php");
+
+				 } 
+				else {
+					header("Location:homepage_recipient.php");
+
+				}
+				
 			} ?>
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
-					<?php var_dump($_SESSION['current_user']); ?>
 				</div>
 			</section>
 
