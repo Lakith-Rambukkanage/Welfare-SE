@@ -27,12 +27,7 @@
             $con = $db->getConnection();
             $sql = "SELECT * FROM events";
             $result_set = mysqli_query($con, $sql);
-            //$row = mysqli_fetch_assoc($result_set);
-            //echo $row2['name'];
-            //echo $result["name"];
-            //$a=10;
-            // if(true){
-            // output data of each row
+            
         ?>
         <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
         <?php
