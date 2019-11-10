@@ -7,7 +7,7 @@ class User{
 	//protected $notifications;
 	//protected $system;
 
-	public function __construct($user_name, $email,$type/*, $sys*/){
+	public function __construct($user_name, $email, $type/*, $sys*/){
 		$this->user_name = $user_name;
 		$this->email = $email;
 		$this->type = $type;
