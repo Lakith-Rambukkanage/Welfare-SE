@@ -26,8 +26,8 @@ class User{
 	public function get_email(){
 		return $this->email;
 	}
-	public function get_first_name(){
-		return $this->first_name;
+	public function get_user_name(){
+		return $this->user_name;
 		//echo $this->first_name;
 	}
 	public function get_last_name(){
