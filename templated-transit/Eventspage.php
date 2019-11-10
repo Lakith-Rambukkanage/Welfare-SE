@@ -1,7 +1,7 @@
 <html>
     <head>
-		<meta charset="UTF-8">
-		<title>Welfare Organization - Eventspage</title>
+    <meta charset="UTF-8">
+		<title>Welfare Organization - ViewDonors</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -15,6 +15,7 @@
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/style-xlarge.css" />
+        </noscript>
 
 	</head>
     <body>
@@ -163,8 +164,4 @@
 }
 </style>
 </html>
-<!-- <script>
-    function Open(){
-        window.open("AddEvent.php");
-    }
-</script> -->
+
