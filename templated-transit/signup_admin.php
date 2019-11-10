@@ -4,7 +4,7 @@
 	templated.co @templatedco
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
-<?<?php session_start(); ?>
+<?php session_start(); ?>
 <?php $_SESSION['logged_in']=false; ?>
 <html lang="en">
 	<head>
@@ -52,6 +52,9 @@
 								<input name="user_name" id="user_name" value="" placeholder="User Name" type="text" style="margin-top:3px; margin-bottom:6px">
 							</div>
 
+							<div>
+								<input name="actualname" id="actualname" value="" placeholder="Full name" type="text" style="margin-top:3px; margin-bottom:6px">
+							</div>
 							<div>
 								<input name="email" id="email" value="" placeholder="Email" type="email" style="margin-top:6px; margin-bottom:6px">
 							</div>

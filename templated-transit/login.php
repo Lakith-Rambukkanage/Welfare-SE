@@ -9,7 +9,7 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<title>Welfare Organization - Recipient Sign Up</title>
+		<title>Welfare Organization - Log In</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -28,7 +28,7 @@
 
 		<!-- Header -->
 		<?php 
-			require ('includes/header_signup.html');
+			require ('includes/header_login.php');
 			?>
 
 		<!-- Banner -->
@@ -42,35 +42,22 @@
 			<section id="three" class="wrapper style3 special" >
 				<div class="container">
 					<header class="major">
-						<h2>Sign up as Recipient</h2>
+						<h2>Log In</h2>
 					</header>
 				</div>
 				<div class="container 75%">
-					<form action="new_recipient_process.php" method="post">
+					<form action="login_process.php" method="post">
 						<div>
 							<div>
 								<input name="user_name" id="user_name" value="" placeholder="User Name" type="text" style="margin-top:3px; margin-bottom:6px">
 							</div>
-
-							<div>
-								<input name="email" id="email" value="" placeholder="Email" type="email" style="margin-top:6px; margin-bottom:6px">
-							</div>
-
 							<div>
 								<input name="password" id="password" value="" placeholder="Password" type="password" style="margin-top:3px; margin-bottom:6px">
 							</div>
-							<div>
-								<input name="repassword" id="repassword" value="" placeholder="Confirm Password" type="password" style="margin-top:3px; margin-bottom:6px">
-							</div>
-							<?php $instruction = "(Your Password should contain atleast a symbol, a digit and a block letter)"; ?>
-			<p class = "instructions"><b><?php echo"{$instruction}";?></b></p>
-
-							<div>
-								<textarea name="description" id="description" placeholder="description" rows="6" style="margin-top:6px; margin-bottom:6px"></textarea>
-							</div>
+							<br>
 							<div class="12u$">
 								<ul class="actions">
-									<li><input value="Sign Up" class="special big" type="submit" name="submit"></li>
+									<li><input value="Log In" class="special big" type="submit" name="submit"></li>
 								</ul>
 							</div>
 						</div>

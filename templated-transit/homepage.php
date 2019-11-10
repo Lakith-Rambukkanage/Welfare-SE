@@ -36,7 +36,7 @@
 				<p>Let there be a bright future for EVERYONE</p>
 				<ul class="actions">
 					<li>
-						<a href="signup.php" class="button big">Sign in</a>
+						<a href="signup.php" class="button big">Sign up</a>
 					</li>
 				</ul>
 			</section>

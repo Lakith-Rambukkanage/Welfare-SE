@@ -2,22 +2,26 @@
 class User{
 	//protected $user_id;
 	protected $user_name;
+	protected $fullname;
 	protected $email;
-	//protected $contact;
+	protected $type;
 	//protected $notifications;
 	//protected $system;
 
-	public function __construct($user_name, $email/*, $sys*/){
+	public function __construct($user_name,$fullname, $email,$type/*, $sys*/){
 		$this->user_name = $user_name;
+		$this->fullname = $fullname;
 		$this->email = $email;
+		$this->type = $type;
 		//$this->system = $sys;
 	}
 
-	public function set_id($id){
-		$this->user_id = $id;
-	}
+	
 	public function get_id(){
 		return $this->user_id;
+	}
+	public function get_fullname(){
+		return $this->fullname;
 	}
 	public function get_email(){
 		return $this->email;
@@ -31,6 +35,20 @@ class User{
 	}
 	public function get_contact_number(){
 		return $this->contact;
+	}
+	public function get_type(){
+		return $this->type;
+	}
+
+
+
+
+
+	public function set_id($id){
+		$this->user_id = $id;
+	}
+	public function set_type($type){
+		$this->type = $type;
 	}
 	public function set_email($email){
 		$this->email = $email;
