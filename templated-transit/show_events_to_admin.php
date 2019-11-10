@@ -22,7 +22,9 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
+        <script src="js/init.js"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+        
 		<noscript>
 			<!-- <link rel="stylesheet" href="css/skel.css" /> -->
 			<link rel="stylesheet" href="css/style.css" />
@@ -86,16 +88,16 @@
         <?php
         
         $event=strtolower($event);
-       
+    
             require_once('includes/Database.php');
             $db = Database::getInstance();
             $con = $db->getConnection();
-            $sql = "SELECT * FROM events where type='animal'";
+            $sql = "SELECT * FROM events where type='$event'";
             $result_set = mysqli_query($con, $sql);
             
         ?>
         <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
-        <section id="one" class="wrapper style1 special" style="background-color:#212852" >
+        <section id="one" class="wrapper style1 special" style="height:1150px;background-color:#212852;padding:20px,0px,0px,0px" >
             <!-- <div class="container"> -->
                   
                 <?php
@@ -106,24 +108,24 @@
 
             
                 
-					<div class="4u 12u$(medium)" style="width:30%;margin-left:37%">
+					<!-- <div class="" style="width:40%;margin-left:30%;height:240px;padding:0px,0px,0px,200px;margin-bottom:200px"> -->
                     
-                        <section class="box" style="background-color:#212852; left-margin:10px;width:90%">
-                            <div class="col-sm-4" style="background-color:white;width:80%">
+                        <section class="box" style="background-color:#2122; margin-left:30%;width:40%;height:250px;padding:20px,0px,0px,0px">
+                            <div class="" style="background-color:white;width:100%;border-radius:5px; height:90%; padding:5px; margin:10px">
                                 <h4><?php echo $row['name'];?></h4><br>
                                 <label for="event_type"><b>Type of event:</b></label>
                                 <?php echo $row['type']; ?><br>
-                                <h3>Health</h3>
-                
                             </div>
-			    				
+                            
+                            <button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width:100px; background-color:light blue;margin:0px,0px,0px,0px;padding:0px,0px,0px,0px" class="btn btn-primary btn-sm">
+                                  Add Donate</button>
                         </section>
 
 
-
+                        
 
                         
-                    </div>
+                    <!-- </div> -->
                     
                   
 							
@@ -235,7 +237,7 @@
         <!-- Footer -->
         <?php 
 
-require ('includes/footer.html');
+// require ('includes/footer.html');
 
 ?> 
             
