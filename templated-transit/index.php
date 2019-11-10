@@ -36,7 +36,7 @@
 				<p>Let there be a bright future for EVERYONE</p>
 				<ul class="actions">
 					<li>
-						<a href="signup.php" class="button big">Sign in</a>
+						<a href="signup.php" class="button big">Sign Up</a>
 					</li>
 				</ul>
 			</section>
@@ -98,51 +98,6 @@
 					</div>
 				</div>
 			</section>
-			
-		<!-- Two -->
-			<section id="two" class="wrapper style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Our Staff</h2>
-						<p>Contact our dedicated volunteers to get to know our organization better</p>
-					</header>
-
-<!-- Load admin accounts from sql to the page with name and contact and prof pic-->
-
-					<section class="profiles">
-						<div class="row">
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Lorem ipsum</h4>
-								<p>Lorem ipsum dolor</p>
-							</section>
-							<section class="3u 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Voluptatem dolores</h4>
-								<p>Ullam nihil repudi</p>
-							</section>
-							<section class="3u 6u(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Doloremque quo</h4>
-								<p>Harum corrupti quia</p>
-							</section>
-							<section class="3u$ 6u$(medium) 12u$(xsmall) profile">
-								<img src="images/profile_placeholder.gif" alt="" />
-								<h4>Voluptatem dicta</h4>
-								<p>Et natus sapiente</p>
-							</section>
-						</div>
-					</section>
-					<footer>
-						<ul class="actions">
-							<li>
-								<a href="#" class="button big">Contact Volunteer</a>
-							</li>
-						</ul>
-					</footer>
-				</div>
-			</section>
-
 		<!-- Three -->
 			<section id="three" class="wrapper style3 special">
 				<div class="container">

@@ -67,7 +67,7 @@ include_once('includes/connection.php');?>
 					/*$query = "INSERT INTO employee (first_name, last_name, email, contact_number, password) VALUES('{$first_name}', '{$last_name}', '{$email}', {$contact_number}, '{$password}')";
 			
 					mysqli_query($connection,$query);*/
-					$current_user = new User($user_name, $email);
+					$current_user = new User($user_name, $email,'recipient');
 					$_SESSION['current_user'] = $current_user;
 					$_SESSION['password'] = $password;
 
@@ -143,7 +143,6 @@ include_once('includes/connection.php');?>
 		//header("Location: homepage.php");
 	}
 	?>
-
 
 
 
