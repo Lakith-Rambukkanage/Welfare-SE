@@ -1,7 +1,7 @@
 <html>
     <head>
-		<meta charset="UTF-8">
-		<title>Welfare Organization - Eventspage</title>
+    <meta charset="UTF-8">
+		<title>Welfare Organization - ViewDonors</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -9,9 +9,8 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-        <script src="js/init.js"></script>
-        <script src="https://kit.fontawesome.com/yourcode.js"></script>
-		<noscript>
+		<script src="js/init.js"></script>
+
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/style-xlarge.css" />
@@ -163,8 +162,4 @@
 }
 </style>
 </html>
-<!-- <script>
-    function Open(){
-        window.open("AddEvent.php");
-    }
-</script> -->
+
