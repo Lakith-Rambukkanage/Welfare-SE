@@ -16,10 +16,16 @@
             <link rel="stylesheet" href="css/style-xlarge.css" />
 
 	</head>
-    <body>
-        <?php 
-		    require('includes/header_recipient.php');
-        ?>
+    <body >
+
+<!-- Header -->
+<?php 
+require('includes/header_recipient.php');
+?>
+
+<!-- Banner -->
+
+
         <?php
             require_once('includes/Database.php');
             $db = Database::getInstance();

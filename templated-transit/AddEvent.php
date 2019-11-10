@@ -19,10 +19,13 @@
         </noscript>
 
 	</head>
-    <body>
+    <body >
+
+        <!-- Header -->
         <?php 
-            require('includes/header_recipient.php');
+        require('includes/header_recipient.php');
         ?>
+
         <br><br><br><br>
         <div class="col-sm-4" style="background-color:rgba(255, 255, 255, .8);">
         <form action="AddEventAction.php" method="POST" enctype="multipart/form-data">

@@ -10,23 +10,33 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-        <script src="js/init.js"></script>
-        <!-- <script src="https://kit.fontawesome.com/yourcode.js"></script> -->
-		
+		<script src="js/init.js"></script>
+
+		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
         
 
 	</head>
-    <body>
+    <body >
+
+        <!-- Header -->
         <?php 
-            $fakeuser=new User('yoshani','Yoshani Ranaweera','yoshani@gmail.com','Recipient');
-		    require('includes/header_recipient.php');
+        require('includes/header_recipient.php');
+        ?>
+
+        <?php 
+            
+            require('includes/user.php');
             require_once('includes/Database.php');
             $db = Database::getInstance();
             $con = $db->getConnection();
-            $sql = "SELECT event_name,org_name,req_amount,rec_amount,event_type,description FROM events WHERE username LIKE CONCAT('%', fakeuser.get_fullname(), '%')";
+            $fakeuser=new User('yoshani','Yoshani Ranaweera','yoshani@gmail.com','Recipient');
+            $user=$fakeuser->get_user_name();
+            // $sql= "select * from events";
+            $sql = "SELECT event_name,org_name,req_amount,rec_amount,event_type,description FROM events WHERE username='{$user}'";
            
             $result_set = mysqli_query($con, $sql);
             
