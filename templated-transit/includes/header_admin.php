@@ -4,7 +4,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="homepage_admin.php">Home</a></li>
-						<li><a href="homepage_admin.php">Transfer Donations</a></li>
+						<li><a href="transfer_funds.php">Transfer Donations</a></li>
 						<li><a href="homepage_admin.php">Events</a></li>
 						<li><a href="report.php">Generate Report</a></li>
 						<li><a href="logout.php" class="button special">Log Out</a></li>
