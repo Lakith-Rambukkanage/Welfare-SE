@@ -9,8 +9,9 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-
+        <script src="js/init.js"></script>
+        <script src="https://kit.fontawesome.com/yourcode.js"></script>
+		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
             <link rel="stylesheet" href="css/style-xlarge.css" />
@@ -148,6 +149,19 @@
         </style>
 
     </body>
+<style>
+.text1{
+    padding:0px;
+    margin-left:35%;
+    width:30%;
+    color:white;
+    height:20%;
+    border:1px solid black;
+    background-color: #445;
+    text-align:center;
+    border-radius:11px
+}
+</style>
 </html>
 <!-- <script>
     function Open(){
