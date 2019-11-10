@@ -26,9 +26,9 @@
 
 		<!-- Header -->
 			<?php 
-		require('includes/header.html');
+		require('includes/header_transferFunds.php');
 		?>
-
+		<form action='' method='POST'>
 		<!-- Main -->
 			<section id="main" class="wrapper">
 				<div class="container">
@@ -54,10 +54,94 @@
 			$results=array($result_pov,$result_dis,$result_hel,$result_anim,$result_child,$result_env);
 			$headings=array('Poverty','Disables','Health','Animals','Children','Evironment');
 			
-			function Poverty(){
-				if(isset($result_pov)){
-					
-				}
+			function Poverty($dbConnection,$trans_pov_query){
+					$result_pov1= mysqli_query($dbConnection,$trans_pov_query);
+					while ($row = $result_pov1->fetch_assoc()) {
+						$f1name = $row["donor"];
+						$f2name = $row["event_name"];
+						$f3name = $row["amount"];
+						$f4name = $row["date_done"];
+						$query1="update donations set trans_status='Yes' where donor='{$f1name}' and event_name='".$f2name."' and amount='".$f3name."' and date_done='".$f4name."';";
+						$query2="update events set rec_amount=rec_amount+".$f3name." where name='".$f2name."';";
+						$res1= mysqli_query($dbConnection,$query1);
+						$res2= mysqli_query($dbConnection,$query2);
+					}
+					echo "<script> window.history.back(); </script>";
+			}
+			
+			function Disables($dbConnection,$trans_dis_query){
+					$result_dis1= mysqli_query($dbConnection,$trans_dis_query);
+					while ($row = $result_dis1->fetch_assoc()) {
+						$f1name = $row["donor"];
+						$f2name = $row["event_name"];
+						$f3name = $row["amount"];
+						$f4name = $row["date_done"];
+						$query1="update donations set trans_status='Yes' where donor='".$f1name."' and event_name='".$f2name."' and amount='".$f3name."' and date_done='".$f4name."';";
+						$query2="update events set rec_amount=rec_amount+".$f3name." where name='".$f2name."';";
+						$res1= mysqli_query($dbConnection,$query1);
+						$res2= mysqli_query($dbConnection,$query2);
+					}
+					echo "<script> window.history.back(); </script>";
+			}
+			
+			function Health($dbConnection,$trans_hel_query){
+					$result_hel1= mysqli_query($dbConnection,$trans_hel_query);
+					while ($row = $result_hel1->fetch_assoc()) {
+						$f1name = $row["donor"];
+						$f2name = $row["event_name"];
+						$f3name = $row["amount"];
+						$f4name = $row["date_done"];
+						$query1="update donations set trans_status='Yes' where donor='".$f1name."' and event_name='".$f2name."' and amount='".$f3name."' and date_done='".$f4name."';";
+						$query2="update events set rec_amount=rec_amount+".$f3name." where name='".$f2name."';";
+						$res1= mysqli_query($dbConnection,$query1);
+						$res2= mysqli_query($dbConnection,$query2);
+					}
+					echo "<script> window.history.back(); </script>";
+			}
+			
+			function Animals($dbConnection,$trans_anim_query){
+					$result_anim1=mysqli_query($dbConnection,$trans_anim_query);
+					while ($row = $result_anim1->fetch_assoc()) {
+						$f1name = $row["donor"];
+						$f2name = $row["event_name"];
+						$f3name = $row["amount"];
+						$f4name = $row["date_done"];
+						$query1="update donations set trans_status='Yes' where donor='{$f1name}' and event_name='{$f2name}' and amount='{$f3name}' and date_done='{$f4name}'";
+						$query2="update events set rec_amount=rec_amount+'{$f3name}' where name='{$f2name}'";
+						$res1= mysqli_query($dbConnection,$query1);
+						$res2= mysqli_query($dbConnection,$query2);
+					}
+					echo "<script> window.history.back(); </script>";
+			}
+			
+			function Children($dbConnection,$trans_child_query){
+					$result_child1= mysqli_query($dbConnection,$trans_child_query);
+					while ($row = $result_child1->fetch_assoc()) {
+						$f1name = $row["donor"];
+						$f2name = $row["event_name"];
+						$f3name = $row["amount"];
+						$f4name = $row["date_done"];
+						$query1="update donations set trans_status='Yes' where donor='".$f1name."' and event_name='".$f2name."' and amount='".$f3name."' and date_done='".$f4name."';";
+						$query2="update events set rec_amount=rec_amount+".$f3name." where name='".$f2name."';";
+						$res1= mysqli_query($dbConnection,$query1);
+						$res2= mysqli_query($dbConnection,$query2);
+					}
+					echo "<script> window.history.back(); </script>";
+			}
+			
+			function Environment($dbConnection,$trans_env_query){
+					$result_env1= mysqli_query($dbConnection,$trans_env_query);
+					while ($row = $result_env1->fetch_assoc()) {
+						$f1name = $row["donor"];
+						$f2name = $row["event_name"];
+						$f3name = $row["amount"];
+						$f4name = $row["date_done"];
+						$query1="update donations set trans_status='Yes' where donor='".$f1name."' and event_name='".$f2name."' and amount='".$f3name."' and date_done='".$f4name."';";
+						$query2="update events set rec_amount=rec_amount+".$f3name." where name='".$f2name."';";
+						$res1= mysqli_query($dbConnection,$query1);
+						$res2= mysqli_query($dbConnection,$query2);
+					}
+					echo "<script> window.history.back(); </script>";
 			}
 			
 			for ($x = 0; $x <= 5; $x++) {
@@ -85,16 +169,35 @@
 							</tr>';
 					}
 					echo "</table>";
-					echo "<input type='button' name='".$headings[$x]."' value='Transfer Funds' onclick='".$headings[$x]."'/>";
+					echo "<input type='submit' name='".$headings[$x]."' value='Transfer Funds'/>";
 					echo "</br></br>";
 				}
 			}
-			?>
-		<!-- Footer -->
-			<?php 
-			require ('includes/footer.html');
+			if (isset($_POST['Poverty'])) {
+				Poverty($dbConnection,$trans_pov_query);
+			}
+			if (isset($_POST['Disables'])) {
+				Disables($dbConnection,$trans_dis_query);
+			}
+			if (isset($_POST['Health'])) {
+				Health($dbConnection,$trans_hel_query);
+			}
+			if (isset($_POST['Animals'])) {
+				Animals($dbConnection,$trans_anim_query);
+			}
+			if (isset($_POST['Children'])) {
+				Children($dbConnection,$trans_child_query);
+			}
+			if (isset($_POST['Environment'])) {
+				Environment($dbConnection,$trans_env_query);
+			}
 			?>
 	</div>
 	</section>
+	</form>
+	<!-- Footer -->
+			<?php 
+			require ('includes/footer.html');
+			?>
 	</body>
 </html>

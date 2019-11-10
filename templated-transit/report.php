@@ -37,17 +37,12 @@ $result4= mysqli_query($dbConnection,$comp_query);
 		</noscript>
 </head>
 
-<body class='landing'>
+<body>
 <?php 
 require('includes/header_report.php');
 ?>
-<div style="height: 100px">
-	<section id="banner" >
-				
-	</section>
-</div>
-<section id='one' class='wrapper style1 special'>		
-<div class='container'>
+<section id="main" class="wrapper">
+<div class="container">
 <h2 style="text-align:center;">Organization Report for the Last 15 Days</h2>
 <form>
 <h3 style='text-align:left;'>Total Donated Amount</h3>
