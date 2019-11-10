@@ -2,13 +2,15 @@
 class User{
 	//protected $user_id;
 	protected $user_name;
+	protected $fullname;
 	protected $email;
 	protected $type;
 	//protected $notifications;
 	//protected $system;
 
-	public function __construct($user_name, $email,$type/*, $sys*/){
+	public function __construct($user_name,$fullname, $email,$type/*, $sys*/){
 		$this->user_name = $user_name;
+		$this->fullname = $fullname;
 		$this->email = $email;
 		$this->type = $type;
 		//$this->system = $sys;
@@ -17,6 +19,9 @@ class User{
 	
 	public function get_id(){
 		return $this->user_id;
+	}
+	public function get_fullname(){
+		return $this->fullname;
 	}
 	public function get_email(){
 		return $this->email;
