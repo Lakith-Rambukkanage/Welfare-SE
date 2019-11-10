@@ -38,6 +38,7 @@ include_once('includes/connection.php');?>
 			<?php
 	if (isset($_POST['submit']) and $_SESSION['logged_in']==false) {		
 		$user_name = $_POST['user_name'];
+		$actualname = $_POST['actualname'];
 		$email = $_POST['email'];
 		$password = sha1($_POST['password']);
 		$admincode = sha1($_POST['admincode']);
@@ -69,7 +70,7 @@ include_once('includes/connection.php');?>
 					/*$query = "INSERT INTO employee (first_name, last_name, email, contact_number, password) VALUES('{$first_name}', '{$last_name}', '{$email}', {$contact_number}, '{$password}')";
 			
 					mysqli_query($connection,$query);*/
-					$current_user = new User($user_name, $email,'admin');
+					$current_user = new User($user_name,$actualname, $email,'admin');
 					$_SESSION['current_user'] = $current_user;
 					$_SESSION['password'] = $password;
 
