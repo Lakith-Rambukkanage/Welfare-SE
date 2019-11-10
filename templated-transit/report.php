@@ -20,22 +20,46 @@ $result4= mysqli_query($dbConnection,$comp_query);
 
 <html>
 <head>
-<link rel="stylesheet" href="css/style.css" />
+		<meta charset="UTF-8">
+		<title>Welfare Organization - Sign Up</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
 </head>
 
-<body>
+<body class='landing'>
+<?php 
+require('includes/header_report.php');
+?>
+<div style="height: 100px">
+	<section id="banner" >
+				
+	</section>
+</div>
+<section id='one' class='wrapper style1 special'>		
+<div class='container'>
 <h2 style="text-align:center;">Organization Report for the Last 15 Days</h2>
 <form>
-<h3>Total Donated Amount</h3>
+<h3 style='text-align:left;'>Total Donated Amount</h3>
   <input style="width:25%;" type="text" name="don_amount" value="<?php echo $row1[0];?>">
   </br></br>
-<h3>Amount Transferred to Recepients </h3>
+<h3 style='text-align:left;'>Amount Transferred to Recepients </h3>
   <input style="width:25%;" type="text" name="trans_amount" value="<?php echo $row2[0];?>">
   </br></br>
 </form>
 
 
-<h3>Details of Ongoing Events</h3>
+<h3 style='text-align:left;'>Details of Ongoing Events</h3>
 <div class="table-wrapper">
 <table style='width:50%;'>
 <thead>
@@ -58,7 +82,7 @@ while ($row = $result4->fetch_assoc()) {
 </table>
 </br></br>
 </div>
-<h3>Details of Donations Made by Donors</h3>
+<h3 style='text-align:left;'>Details of Donations Made by Donors</h3>
 <table>
 <thead>
 <tr>
@@ -82,5 +106,10 @@ while ($row = $result3->fetch_assoc()) {
 		  </tr>';}
 ?>
 </table>
+</div>
+</section>
+<?php 
+require ('includes/footer.html');
+?>
 </body>
 </html>
