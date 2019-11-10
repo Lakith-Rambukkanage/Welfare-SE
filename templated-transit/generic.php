@@ -45,7 +45,12 @@
 
 				</div>
 			</section>
-
+			<?php
+			
+			$trans_amount_query="select donor,event_name,amount,date_done from donations left outer join events on donations.event_name=events.name where trans_status='No' and event_type='poverty';";
+			
+			
+			?>
 		<!-- Footer -->
 			<?php 
 			require ('includes/footer.html');

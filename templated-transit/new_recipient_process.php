@@ -38,6 +38,7 @@ include_once('includes/connection.php');?>
 			<?php
 	if (isset($_POST['submit']) and $_SESSION['logged_in']==false) {		
 		$user_name = $_POST['user_name'];
+		$actualname = $_POST['actualname'];
 		$email = $_POST['email'];
 		$description = $_POST['description'];
 		$password = sha1($_POST['password']);
@@ -67,14 +68,14 @@ include_once('includes/connection.php');?>
 					/*$query = "INSERT INTO employee (first_name, last_name, email, contact_number, password) VALUES('{$first_name}', '{$last_name}', '{$email}', {$contact_number}, '{$password}')";
 			
 					mysqli_query($connection,$query);*/
-					$current_user = new User($user_name, $email);
+					$current_user = new User($user_name,$actualname, $email,'recipient');
 					$_SESSION['current_user'] = $current_user;
 					$_SESSION['password'] = $password;
 
 
 					//SQL INPUT to users
 					$user_type='recipient';
-					$query = "INSERT INTO users (username, email, password,type) VALUES('{$user_name}', '{$email}', '{$password}','{$user_type}')";
+					$query = "INSERT INTO users (username,actualname, email, password,type) VALUES('{$user_name}','{$actualname}' ,'{$email}', '{$password}','{$user_type}')";
 					mysqli_query($connection, $query);
 					if (isset($_SESSION['current_user'])){
 						$_SESSION['logged_in'] = True;
@@ -143,7 +144,6 @@ include_once('includes/connection.php');?>
 		//header("Location: homepage.php");
 	}
 	?>
-
 
 
 

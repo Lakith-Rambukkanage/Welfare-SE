@@ -1,7 +1,8 @@
+<?php session_start(); ?>
 <html>
     <head>
-		<meta charset="UTF-8">
-		<title>Welfare Organization - Eventspage</title>
+    <meta charset="UTF-8">
+		<title>Welfare Organization - ViewDonors</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -9,25 +10,38 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
-        <script src="js/init.js"></script>
-        <!-- <script src="https://kit.fontawesome.com/yourcode.js"></script> -->
+		<script src="js/init.js"></script>
+
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/style-xlarge.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+        
 
 	</head>
-    <body>
+    <body >
+
+        <!-- Header -->
         <?php 
-		    require('includes/header_recipient.php');
+        require('includes/header_recipient.php');
         ?>
-        <?php
+
+        <?php 
+            
+            require('includes/user.php');
             require_once('includes/Database.php');
             $db = Database::getInstance();
             $con = $db->getConnection();
-            $sql = "SELECT * FROM events";
+            $fakeuser=new User('yoshani','Yoshani Ranaweera','yoshani@gmail.com','Recipient');
+            $user=$fakeuser->get_user_name();
+            // $sql= "select * from events";
+            $sql = "SELECT event_name,org_name,req_amount,rec_amount,event_type,description FROM events WHERE username='{$user}'";
+           
             $result_set = mysqli_query($con, $sql);
             
+           
+
         ?>
         <div class="name" style="font-family: century gothic; padding-right: 50px; box-sizing: border-box;"><i class="fa fa-user-circle-o"></i>&nbsp </div>
         <?php
@@ -158,8 +172,4 @@
 }
 </style>
 </html>
-<!-- <script>
-    function Open(){
-        window.open("AddEvent.php");
-    }
-</script> -->
+
