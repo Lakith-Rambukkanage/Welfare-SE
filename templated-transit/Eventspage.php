@@ -33,9 +33,9 @@
             require_once('includes/Database.php');
             $db = Database::getInstance();
             $con = $db->getConnection();
-            $fakeuser=new User('yoshani','Yoshani Ranaweera','yoshani@gmail.com','Recipient');
+            $fakeuser=  $_SESSION['username'];
             $user=$fakeuser->get_user_name();
-            // $sql= "select * from events";
+            
             $sql = "SELECT event_name,org_name,req_amount,rec_amount,event_type,description FROM events WHERE username='{$user}'";
            
             $result_set = mysqli_query($con, $sql);
@@ -96,7 +96,7 @@
             /* background-image: url("images/yellow.jpg"); */
             /* background-size: auto; */
             /* background-attachment: scroll; */
-            background-color: #FEF964;
+            background-color: #0E68AC;
             }
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
             /* .container {
@@ -153,23 +153,22 @@
                 float:left;
                 content: attr(value) '%';
             }
+            .text1{
+                padding:0px;
+                margin-left:35%;
+                width:30%;
+                color:white;
+                height:20%;
+                border:1px solid black;
+                background-color: #445;
+                text-align:center;
+                border-radius:11px
+            }
 
             
         </style>
 
     </body>
-<style>
-.text1{
-    padding:0px;
-    margin-left:35%;
-    width:30%;
-    color:white;
-    height:20%;
-    border:1px solid black;
-    background-color: #445;
-    text-align:center;
-    border-radius:11px
-}
-</style>
+
 </html>
 
