@@ -77,7 +77,7 @@ require('includes/header_recipient.php');
             /* background-image: url("images/yellow.jpg"); */
             /* background-size: auto; */
             /* background-attachment: scroll; */
-            background-color: #FEF964;
+            background-color: #0E68AC;
             }
             *{margin:0px; padding:0px; font-family:Helvetica, Arial, sans-serif;}
             /* .container {
