@@ -59,7 +59,7 @@
 										<section class="box">
 											<i class="icon big rounded color1 fa-plus-square"></i>
 											<h3>Health</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+											<p>Health is a state of physical, mental and social well-being in which disease and infirmity are absent. Help a person in need.</p>
 										</section>
 									</a>' ;?>
 						</div>
@@ -69,7 +69,7 @@
 										<section class="box">
 											<i class="icon big rounded color9 fa-paw"></i>
 											<h3>Animals</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
+											<p>Are you a pet lover? Then here\'s your chance to help save an animal in need of your love. </p>
 										</section>
 									</a>' ?>
 						</div>
@@ -78,7 +78,7 @@
 									<section class="box">
 										<i class="icon big rounded color6 fa-child"></i>
 										<h3>Children</h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+										<p>Thousands of children are in need of your love and care. Donate a little and help a lot. They are waiting for you.</p>
 									</section>
 								</a>' ?>
 						</div>
@@ -91,7 +91,7 @@
 										<section class="box">
 											<i class="icon big rounded color7 fa-wheelchair"></i>
 											<h3>Disables</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+											<p>You can now help a differently abled person to achieve his dreams. Your contribution is all they need.</p>
 										</section>
 									</a>' ?>
 						</div>
@@ -100,7 +100,7 @@
 										<section class="box">
 											<i class="icon big rounded color10 fa-tree"></i>
 											<h3>Environment</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium ullam consequatur repellat debitis maxime.</p>
+											<p>We survive upon our environment. Protecting it is our prime duty as a human-being. Let\'s donate a little towards the environment.</p>
 										</section>
 								</a>' ?>
 						</div>
@@ -109,7 +109,7 @@
 										<section class="box">
 											<i class="icon big rounded color2 fa-money"></i>
 											<h3>Poverty</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque eaque eveniet, nesciunt molestias. Ipsam, voluptate vero.</p>
+											<p>You are lucky that as long as you have food on your table and a roof over your head. But not everyone is that fortunate. Save them. The choice is yours.</p>
 										</section>
 									</a>' ?>
 						</div>

@@ -33,9 +33,9 @@
             require_once('includes/Database.php');
             $db = Database::getInstance();
             $con = $db->getConnection();
-            $fakeuser=new User('yoshani','Yoshani Ranaweera','yoshani@gmail.com','Recipient');
+            $fakeuser=  $_SESSION['username'];
             $user=$fakeuser->get_user_name();
-            // $sql= "select * from events";
+            
             $sql = "SELECT event_name,org_name,req_amount,rec_amount,event_type,description FROM events WHERE username='{$user}'";
            
             $result_set = mysqli_query($con, $sql);
