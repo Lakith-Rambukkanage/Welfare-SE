@@ -365,7 +365,7 @@ button:hover {
 /* Center the image and position the close button */
 .imgcontainer {
     text-align: center;
-    margin: 0px 0 0 0;
+    margin: 20px 0 0 0;
     padding:15px;
     position: relative;
     height:30%;
@@ -441,13 +441,16 @@ button:hover {
 .creditCardForm {
     max-width: 900px;
     background-color: #fff;
-    margin: 100px auto;
+    margin: 10px auto;
+    height:500px;
     overflow: hidden;
     padding: 25px;
     color: #4c4e56;
 }
 .creditCardForm label {
     width: 100%;
+    height:30%;
+    margin-top:10pz;
     margin-bottom: 10px;
 }
 .creditCardForm .heading h1 {
@@ -459,9 +462,9 @@ button:hover {
     float: left;
     font-size: 18px;
     padding: 0px 0px;
-    margin-top: 0px;
+    margin-top: 140px;
     /* margin:0px; */
-    height:370px;
+    height:270px;
 
     position: relative;
 }
@@ -479,21 +482,21 @@ button:hover {
     margin-right: 10px;
 }
 .creditCardForm .CVV {
-    width: 35%;
+    width: 15%;
 }
 .creditCardForm #card-number-field {
-    width: 100%;
+    width: 30%;
 }
 .creditCardForm #expiration-date {
-    width: 49%;
+    width: 39%;
 }
 .creditCardForm #credit_cards {
-    width: 50%;
+    width: 30%;
     margin-top: 25px;
     text-align: right;
 }
 .creditCardForm #pay-now {
-    width: 100%;
+    width: 40%;
     margin-top: 0px;
 }
 .creditCardForm .payment .btn {
