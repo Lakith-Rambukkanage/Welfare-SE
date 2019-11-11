@@ -23,6 +23,13 @@
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
         <script src="js/init.js"></script>
+
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+        <script src="js/jquery.payform.min.js" charset="utf-8"></script>
+        <!-- <script src="js/donor_donates.js"></script> -->
+
+
+
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
         
 		<noscript>
@@ -110,18 +117,18 @@
                 
 					<!-- <div class="" style="width:40%;margin-left:30%;height:240px;padding:0px,0px,0px,200px;margin-bottom:200px"> -->
                     
-                        <section class="box" style="background-color:#2122; margin-left:30%;width:40%;height:250px;padding:20px,0px,0px,0px">
-                            <div class="" style="background-color:white;width:100%;border-radius:5px; height:90%; padding:5px; margin:10px">
+                        <section class="box" style="background-color:#2122; margin-left:30%;width:40%;height:350px;padding:20px,0px,0px,0px">
+                            <div class="" style="background-color:white;width:100%;border-radius:5px; height:70%; padding:5px; margin:10px">
                                 <h4><?php echo $row['name'];?></h4><br>
                                 <label for="event_type"><b>Type of event:</b></label>
                                 <?php echo $row['type']; ?><br>
                             </div>
                             
-                            <button onclick="document.getElementById('modal-wrapper').style.display='block'" style="width:100px; background-color:light blue;margin-left:40px;margin-top:0px;margin-bottom:0px;padding:10px,0px,10px" class="btn btn-primary btn-sm">
+                            <button onclick="document.getElementById('modal-wrapper').style.display='block'"  style="margin-left:10%;font-color:white;font-weight : bold ;border:1px solid gold;background-color:rgba(53,140,227,0.15);color:white;" class="button alt">
                                   Add Donate</button>
                         </section>
 
-
+                        <!-- <a href="#" class="button alt">Default</a> -->
                         
 
                         
@@ -199,42 +206,7 @@
 
 		
 		
-		
-		<!-- One -->
-		
-			
-
-		<!-- Three -->
-			<!-- <section id="three" class="wrapper style3 special">
-				<div class="container">
-					<header class="major">
-						<h2>Help Us Improve</h2>
-						<p>Let us know how we can be better :)</p>
-					</header>
-				</div>
-				<div class="container 50%">
-					<form action="#" method="post">
-						<div class="row uniform">
-							<div class="6u 12u$(small)">
-								<input name="name" id="name" value="" placeholder="Name" type="text">
-							</div>
-							<div class="6u$ 12u$(small)">
-								<input name="email" id="email" value="" placeholder="Email" type="email">
-							</div>
-							<div class="12u$">
-								<textarea name="message" id="message" placeholder="Message" rows="6"></textarea>
-							</div>
-							<div class="12u$">
-								<ul class="actions">
-									<li><input value="Send Message" class="special big" type="submit"></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-				</div>
-			</section> -->
-
-        <!-- Footer -->
+	
         <?php 
 
 // require ('includes/footer.html');
@@ -245,75 +217,87 @@
 <!-- Popup css and divs -->
 <div id="modal-wrapper" class="modal">
   
-    <form class="modal-content animate" action="postReview.php?a=2">
+    <div class="modal-content animate" id="model_donate">
         
     
         <div class="imgcontainer">
             <span onclick="document.getElementById('modal-wrapper').style.display='none'" class="close" title="Close PopUp">&times;</span>
-            <img src="images/hold_hand.jpg" alt="Avatar" class="avatar">
+            <img src="images/hold_hand.jpg" alt="Avatar" class="avatar" style="margin-top:100px;">
             <h1 style="text-align:center; ">Donate now</h1>
         </div>
 
 
         <!-- <div class="container2"> -->
+			
                     
                 <div class="creditCardForm">
                 
                     <div class="payment">
-                        <form>
+                        <form  action="submit_donation.php?event=<?php echo $event ?>" method="post">
+
+
+                            <div class="form-group amount">
+                                <label for="amount" style="margin-right:0px;margin-bottom:0;padding-right:360px;">Amount</label>
+                                <input type="text" class="form-control" id="owner" name="amount">
+                            </div>
+
                             <div class="form-group owner">
-                                <label for="owner">Owner</label>
-                                <input type="text" class="form-control" id="owner">
+                                <label for="owner" style="margin-right:0px;margin-bottom:0;padding-right:370px;">Owner</label>
+                                <input name="owner" type="text" class="form-control" id="owner">
                             </div>
                             <div class="form-group CVV">
-                                <label for="cvv">CVV</label>
-                                <input type="text" class="form-control" id="cvv">
+                                <label for="cvv" style="margin-bottom:0;">CVV</label>
+                                <input type="text" class="form-control" id="cvv" name="cvv" >
                             </div>
                             <div class="form-group" id="card-number-field">
-                                <label for="cardNumber">Card Number</label>
-                                <input type="text" class="form-control" id="cardNumber">
+                                <label for="cardNumber" style="margin-left:0px;margin-bottom:0;padding-right:320px;">Card Number</label>
+                                <input type="text" class="form-control" id="cardNumber" name="card_number">
                             </div>
                             <div class="form-group" id="expiration-date">
-                                <label>Expiration Date</label>
-                                <select>
-                                    <option value="01">January</option>
-                                    <option value="02">February </option>
-                                    <option value="03">March</option>
-                                    <option value="04">April</option>
-                                    <option value="05">May</option>
-                                    <option value="06">June</option>
-                                    <option value="07">July</option>
-                                    <option value="08">August</option>
-                                    <option value="09">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
+                                <label style="margin-right:0px;margin-right:0px;margin-bottom:0;padding-right:200px;">Expiration Date</label>
+                                <select name="month">
+                                    <option value="JANUARY">January</option>
+                                    <option value="fEBRUARY">February </option>
+                                    <option value="MARCH">March</option>
+                                    <option value="APRIL">April</option>
+                                    <option value="MAY">May</option>
+                                    <option value="JUNE">June</option>
+                                    <option value="JULY">July</option>
+                                    <option value="AUGUST">August</option>
+                                    <option value="SEPTEMBER">September</option>
+                                    <option value="OCTOMBER">October</option>
+                                    <option value="NOVEMBER">November</option>
+                                    <option value="DECEMBER">December</option>
                                 </select>
-                                <select>
-                                    <option value="16"> 2016</option>
-                                    <option value="17"> 2017</option>
-                                    <option value="18"> 2018</option>
-                                    <option value="19"> 2019</option>
-                                    <option value="20"> 2020</option>
-                                    <option value="21"> 2021</option>
+                                <select name="year">
+                                    <option value="2019"> 2019</option>
+                                    <option value="2020"> 2020</option>
+                                    <option value="2021"> 2021</option>
+                                    <option value="2022"> 2022</option>
+                                    <option value="2023"> 2023</option>
+                                    <option value="2024"> 2024</option>
                                 </select>
+
+     
                             </div>
                             <div class="form-group" id="credit_cards">
-                                <img src="assets/images/visa.jpg" id="visa">
-                                <img src="assets/images/mastercard.jpg" id="mastercard">
-                                <img src="assets/images/amex.jpg" id="amex">
+                                <img src="images/visa.jpg" id="visa">
+                                <img src="images/mastercard.jpg" id="mastercard">
+                                <img src="images/amex.jpg" id="amex">
                             </div>
-                            <div class="form-group" id="pay-now">
-                                <button type="submit" class="btn btn-default" id="confirm-purchase">Confirm</button>
+                            <div class="form-group" id="pay-now" style="margin-left:21%;margin-top:4%;">
+                                <button  class="btn btn-default" id="confirm-purchase" style="margin-left:10%;">Confirm</button>
                             </div>
                         </form>
                     </div>
                     
                 </div>
+
+        
             
         <!-- </div> -->
     
-    </form>
+    </div>
   
 </div>
 
@@ -331,7 +315,7 @@
 /* Full-width input fields */
 input[type=text] {
     width: 90%;
-    height:55%;
+    height:10%;
     padding: 12px 20px;
     margin: 8px 26px;
     display: inline-block;
@@ -365,16 +349,16 @@ button:hover {
 /* Center the image and position the close button */
 .imgcontainer {
     text-align: center;
-    margin: 20px 0 0 0;
-    padding:15px;
+    margin: 5px 0 0 0;
+    padding-bottom:15px;
     position: relative;
     height:30%;
    
 
 }
 .avatar {
-    width: 100px;
-	height:100px;
+    width: 175px;
+	height:175px;
     border-radius: 50%;
   
 }
@@ -405,8 +389,8 @@ button:hover {
     background-color: #fefefe;
     margin: 4% auto 15% auto;
     border: 1px solid #888;
-    width: 40%;
-    height:80%; 
+    width: 50%;
+    height:85%; 
     padding-bottom: 0px;
 }
 
@@ -442,7 +426,7 @@ button:hover {
     max-width: 900px;
     background-color: #fff;
     margin: 10px auto;
-    height:500px;
+    height:80%;
     overflow: hidden;
     padding: 25px;
     color: #4c4e56;
@@ -462,7 +446,7 @@ button:hover {
     float: left;
     font-size: 18px;
     padding: 0px 0px;
-    margin-top: 140px;
+    margin-top: 80px;
     /* margin:0px; */
     height:270px;
 
@@ -473,43 +457,69 @@ button:hover {
     margin-bottom: 15px;
 }
 .creditCardForm .payment .form-control {
-    line-height: 40px;
+    line-height: 25px;
     height: auto;
     padding: 0 16px;
+    margin-top:0px;
+}
+.creditCardForm .amount {
+    width: 70%;
+    margin-left: 0px;
+   padding:0px;
 }
 .creditCardForm .owner {
-    width: 63%;
-    margin-right: 10px;
+    width: 70%;
+    margin-left: 0px;
+   
+    padding:0px;
 }
 .creditCardForm .CVV {
     width: 15%;
+    margin-left: 65px;
 }
 .creditCardForm #card-number-field {
-    width: 30%;
+    width: 70%;
+    /* margin-left:0px; */
 }
 .creditCardForm #expiration-date {
-    width: 39%;
+    width: 49%;
+    margin-left:25px;
 }
 .creditCardForm #credit_cards {
-    width: 30%;
-    margin-top: 25px;
-    text-align: right;
+    width: 35%;
+    margin-top: 15px;
+    margin-left: 40px;
+    margin-right:0px;
+    margin-bottom:0px;
+    padding-left:0px;
+    text-align: center;
 }
 .creditCardForm #pay-now {
-    width: 40%;
-    margin-top: 0px;
+    width: 60%;
+    margin-right: 300px;
 }
 .creditCardForm .payment .btn {
-    width: 100%;
+    width: 80%;
+    /* margin:10px,10px,10px,10px; */
     margin-top: 3px;
     font-size: 24px;
     background-color: #2ec4a5;
     color: white;
 }
 .creditCardForm .payment select {
-    padding: 10px;
+    padding-top: 10px;
+    margin-top:10px;
     margin-right: 15px;
+    
+  
+   overflow: hidden;
+   background: url(new_arrow.png) no-repeat right #ddd;
+   border: 1px solid #ccc;
+   
 }
+
+
+
 .transparent {
     opacity: 0.2;
 }
