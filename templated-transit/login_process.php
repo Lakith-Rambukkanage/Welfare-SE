@@ -70,22 +70,23 @@ session_start();
 				else{
 					if (isset($_SESSION['current_user'])){
 						$_SESSION['logged_in'] = True;
+								if ($type=='admin') {
+							header("Location:homepage_admin.php");
+
+						}
+						elseif ($type=='donor') {
+							header("Location:homepage_donor.php");
+
+						 } 
+						else {
+							header("Location:homepage_recipient.php");
+
+						}
 					}
 					//echo "<script> window.history.back(); </script>";
 				}
 
-				if ($type=='admin') {
-					header("Location:homepage_admin.php");
-
-				}
-				elseif ($type=='donor') {
-					header("Location:homepage_donor.php");
-
-				 } 
-				else {
-					header("Location:homepage_recipient.php");
-
-				}
+				
 				
 			} ?>
 		<!-- Main -->
